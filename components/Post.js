@@ -25,6 +25,11 @@ export default function Post({img,userImg,caption,username,id}) {
           <BookmarkIcon className="btn"/>
       </div>
 
+      {/* Post Comments */}
+
+        <p className="p-5 truncate"><span className="font-bold mr-2">{username}</span>{caption}</p>
+
+        {/*  */}
     </div>
   )
 }
