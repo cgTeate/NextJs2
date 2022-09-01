@@ -1,4 +1,7 @@
 import Image from "next/image";
+import React from "react";
+import { SearchIcon } from '@heroicons/react/24/outline'
+
 
 
 export default function Header() {
