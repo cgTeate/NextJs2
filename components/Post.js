@@ -1,6 +1,6 @@
 import React from 'react'
 import { EllipsisHorizontalIcon} from "@heroicons/react/24/solid"
-import { HeartIcon, ChatBubbleOvalLeftEllipsisIcon, BookmarkIcon} from "@heroicons/react/24/outline"
+import { HeartIcon, ChatBubbleOvalLeftEllipsisIcon, BookmarkIcon, FaceSmileIcon} from "@heroicons/react/24/outline"
 
 export default function Post({img,userImg,caption,username,id}) {
   return (
@@ -29,7 +29,14 @@ export default function Post({img,userImg,caption,username,id}) {
 
         <p className="p-5 truncate"><span className="font-bold mr-2">{username}</span>{caption}</p>
 
-        {/*  */}
+        {/* Post Image */}
+
+        <form className="flex items-center p-4">
+            <FaceSmileIcon className="h-7"/>
+            <input className="border-none flex-1 focus:ring-0" type="text" placeholder="Enter your comment..."/>
+            <button className="text-blue-400 font-bold">Post</button>
+        </form>
+
     </div>
   )
 }
