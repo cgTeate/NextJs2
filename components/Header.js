@@ -2,10 +2,12 @@ import { MagnifyingGlassIcon, PlusCircleIcon } from '@heroicons/react/24/outline
 import { HomeIcon } from '@heroicons/react/24/solid';
 import Image from "next/image";
 import React from "react";
-
+import {useSession} from "next-auth/react"
 
 
 export default function Header() {
+  const {data: session} = useSession();
+  console.log(session);
   return (
     <div className="shadow-sm border-b sticky top-0 bg-white z-30">
         <div className="flex items-center justify-between max-w-6xl mx-4 xl:mx-auto">
