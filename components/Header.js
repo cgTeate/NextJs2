@@ -45,12 +45,19 @@ export default function Header() {
 
         <div className="flex space-x-4 items-center">
         <HomeIcon className="hidden md:inline-flex h-6 cursor-pointer hover-:scale-125 transition-transform duration-200 ease-out" />
-        <PlusCircleIcon className="h-6 cursor-pointer hover-:scale-125 transition-transform duration-200 ease-out" />
-        <img
-          src="https://img.theweek.in/content/dam/week/news/entertainment/images/2019/4/25/Johnny-Depp-dating.jpg"
-          alt="user-image"
-          className="h-10 rounded-full cursor-pointer"
-        />
+        {session ? (
+          <>
+            <PlusCircleIcon className="h-6 cursor-pointer hover-:scale-125 transition-transform duration-200 ease-out" />
+            <img
+              src={session.user.image}
+              alt="user-image"
+              className="h-10 rounded-full cursor-pointer"
+            />
+          </>
+        ): (
+          <button>Sign in</button>
+        )}
+        
       </div>
     </div>
     </div>
