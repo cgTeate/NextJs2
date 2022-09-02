@@ -2,7 +2,7 @@ import { MagnifyingGlassIcon, PlusCircleIcon } from '@heroicons/react/24/outline
 import { HomeIcon } from '@heroicons/react/24/solid';
 import Image from "next/image";
 import React from "react";
-import {useSession} from "next-auth/react"
+import {useSession, signIn, signOut} from "next-auth/react"
 
 
 export default function Header() {
@@ -49,13 +49,14 @@ export default function Header() {
           <>
             <PlusCircleIcon className="h-6 cursor-pointer hover-:scale-125 transition-transform duration-200 ease-out" />
             <img
+            onClick={signOut}
               src={session.user.image}
               alt="user-image"
               className="h-10 rounded-full cursor-pointer"
             />
           </>
         ): (
-          <button>Sign in</button>
+          <button onClick={signIn}>Sign in</button>
         )}
         
       </div>
