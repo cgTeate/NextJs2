@@ -1,9 +1,12 @@
 import { useRecoilState } from "recoil";
 import { modalState } from "../atom/modalAtom";
 import Modal from "react-modal";
+import { CameraIcon } from "@heroicons/react/24/outline";
+import { useRef } from "react";
 
 export default function UploadModal() {
   const [open, setOpen] = useRecoilState(modalState);
+  const filePickerRef = useRef(null)
   return (
     <div>
       {open && (
@@ -13,7 +16,8 @@ export default function UploadModal() {
           onRequestClose={() => setOpen(false)}
         >
           <div className="flex flex-col justify-center items-center h-[100%]">
-            <h1>Modal</h1>
+            <CameraIcon onClick={()=>filePickerRef.current.click()} className="cursor-pointer h-14 bg-red-200 p-2 rounded-full border-2 text-red-500"/>
+            <input type="file" hidden ref={filePickerRef}/>
           </div>
         </Modal>
       )}
