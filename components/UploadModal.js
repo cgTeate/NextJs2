@@ -29,7 +29,7 @@ export default function UploadModal() {
         >
           <div className="flex flex-col justify-center items-center h-[100%]">
             {selectedFile ? (
-              <img src={selectedFile} alt=""/>
+              <img onClick={()=>setSelectedFile(null)} src={selectedFile} alt="" className="w-full max-h-[250px] object-cover cursor-pointer"/>
             ) : (<CameraIcon onClick={()=>filePickerRef.current.click()} className="cursor-pointer h-14 bg-red-200 p-2 rounded-full border-2 text-red-500"/>)}
             <input type="file" hidden ref={filePickerRef} onChange={addImageToPost}/>
             <input type="text" maxLength={150} placeholder="Please enter your caption..." className="m-4 border-none text-center w-full focus:ring-0"/>
